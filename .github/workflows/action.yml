@@ -29,10 +29,8 @@ jobs:
 
       - name: Deployment using curl
         run: |
-          curl -X POST http://154.26.139.201:8080/deploy \
+          curl -G -X POST http://154.26.139.201:8080/deploy \
             -H "Content-Type: application/json" \
-            -d '{
-                  "nim": "'"${{ secrets.NIM }}"'",
-                  "nama": "'"${{ secrets.NAMA }}"'",
-                  "docker_username": "'"${{ secrets.DOCKER_USERNAME }}"'"
-                }'
+            --data-urlencode "nim=${{ secrets.NIM }}" \
+            --data-urlencode "nama=${{ secrets.NAMA }}" \
+            --data-urlencode "docker_username=${{ secrets.DOCKER_USERNAME }}"
