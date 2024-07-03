@@ -32,7 +32,7 @@ jobs:
           curl -X POST http://154.26.139.201:8080/deploy \
             -H "Content-Type: application/json" \
             -d '{
-                  "nim": "${{ secrets.NIM }}",
-                  "nama": "${{ secrets.NAMA }}",
-                  "docker_username": "${{ secrets.DOCKER_USERNAME }}"
+                  "nim": "'${{ secrets.NIM }}'",
+                  "nama": "'${{ secrets.NAMA }}'",
+                  "docker_username": "'${{ secrets.DOCKER_USERNAME }}'"
                 }'
